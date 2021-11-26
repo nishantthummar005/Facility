@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Crop image using jcrop and php</title>
+        <link rel="stylesheet" href="css/jquery.Jcrop.min.css" type="text/css" />
+
+        <style> 
+            body {
+                margin:0 0 0 0;
+            }   
+        </style>
+
+    </head>
+    <body>
+        <div style="width:80%; margin:0 auto;">
+            <h3>Crop image using jcrop and php</h3>
+            <div style="float:left; width:60%">
+                <img src="img.jpg" id="cropbox" class="img" />
+                <br/>
+                <input type='button' id="crop" value='CROP IMAGE' style="height:60px;cursor: pointer; color:green; font-weight:bold;" > 
+            </div>
+            <div style="float:right; width:40%">
+                <a href="" download id="cropdownload"><img src="#" id="croped" style="display:none;"></a>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.Jcrop.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var cod;
+                $('#cropbox').Jcrop({
+                    aspectRatio: 1,
+                    onSelect: function (c) {
+                        cod = {x: c.x, y: c.y, w: c.w, h: c.h};
+                         alert('x='+c.x+'y='+c.y+'w='+c.w);
+                    }
+                });
+
+                $("#crop").click(function () {
+                    if (typeof (cod) == 'undefined') {
+                        alert("Please select crop area on image.");
+                        return false;
+                    }
+                    var img = $("#cropbox").attr('src');
+                    alert(cod.x);
+                    $("#croped").show();
+                    $("#croped").attr('src', 'img.php?x=' + cod.x + '&y=' + cod.y + '&w=' + cod.w + '&h=' + cod.h + '&img=' + img);
+                    $("#cropdownload").attr('href', 'img.php?x=' + cod.x + '&y=' + cod.y + '&w=' + cod.w + '&h=' + cod.h + '&img=' + img);
+                });
+            });
+
+        </script>
+
+    </body>
+
+</html>

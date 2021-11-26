@@ -1,0 +1,9 @@
+ .face{
+                        border: 2px solid #fff;
+                        display: none;
+                }
+                .picture{
+                        margin: 15% 30%;
+                        padding:3px;
+                        border:10px solid #dfdfdf;
+                }

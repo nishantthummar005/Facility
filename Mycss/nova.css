@@ -1,0 +1,106 @@
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+  
+  outline: 1px solid slategrey;
+}
+body::-webkit-scrollbar-thumb:active{
+    background: red;
+}
+:root {
+  --maincolor: #f5f5f5;
+}
+
+.profile_status{
+    background: url(wave1.jpg);
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
+    text-align: center;
+    box-shadow: 0 0 10px 10px white,0 0 50px 10px #dfdfdf;
+    border-radius: 100%;
+    margin: 80px auto;
+    font-size: 20px;
+    animation: 2.2s infinite profile_status_ani;
+    position: relative;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: transform 0.2s, opacity 0.3s;
+}
+@keyframes profile_status_ani{
+    20%{color:red;font-size:18px;box-shadow: 0 0 10px 10px white,0 0 50px 5px #dfdfdf;background-size: 100% 50%;};
+    50%{color:blue;font-size:20px};
+    80%{color:green;font-size:22px};
+    100%{color:green;font-size:20px};
+}
+
+
+.profile_status:after{
+    content: '';
+    width: 140%;
+    height: 0.5px;
+    background: silver;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 0;
+    box-shadow: 0px 1px 0 1px #dfdfdf;
+    animation: 1.7s infinite profile_line;
+}
+
+@keyframes profile_line{
+    10%{ top:20px;box-shadow: 0px 1px 0 1px skyblue;}
+    20%{ top:40px;box-shadow: 0px 1px 0 1px #F06292;}
+    30%{ top:60px;box-shadow: 0px 1px 0 1px #FFEE58;}
+    40%{ top:80px;box-shadow: 0px 1px 0 1px #039BE5;}
+    50%{ top:100px;box-shadow: 0px 1px 0 1px skyblue;}
+}
+
+.profile_status::before{
+    content: '50';
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    background-image: url(left.gif);
+    position: absolute;
+    background-size: 55px;
+    background-repeat: no-repeat;
+    display: block;
+    line-height: 55px;
+    top: -41px;
+    font-size: 16px;
+    right: -110px;
+    z-index: 11111;
+    animation: 1.7s infinite profile_count;
+    color: white;
+}
+
+@keyframes profile_count{
+    10%{ top:-30px;}
+    20%{ top:-10px;}
+    30%{ top:10px;}
+    40%{ top:30px;}
+    50%{ top:50px;}
+}
+
+input[type="checkbox"]{
+    position: relative;
+    
+}
+input[type="checkbox"]:after{
+    content: '\2713';
+    width: 15px;
+    height: 15px;
+    background: #dfdfdf;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+}

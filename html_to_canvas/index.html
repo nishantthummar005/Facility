@@ -1,0 +1,48 @@
+<!--
+Author
+@Rohit Kumar
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Convert html content into image</title>
+<body>
+<div  style="margin:0 auto;text-align:center; width:30%">
+	<div id="wrp" style="border:1px solid;">
+            <img src="smile.png" />
+        <bR>
+        <input type="text" value="" placeholder="Enter custom text here!!.." style="position: absolute;top: 15%;left: 43.2%;padding: 10px;" >
+	<br/>
+<br/>
+	</div>
+    <br>
+	<button id="gimg" type="button">Generate Image</button>
+
+	<div id="img" style="display:none;">
+            <a href="" id="imgdownload" download><img src="" id="newimg" /></a>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="html2canvas.js"></script>
+<script>
+ $(function(){
+  $("#gimg").click(function(){
+     html2canvas($("#wrp"), {
+	    onrendered: function(canvas) {
+	       var imgsrc = canvas.toDataURL("image/png");
+	       console.log(imgsrc);
+	       $("#newimg").attr('src',imgsrc);
+               $("#imgdownload").attr('href',imgsrc);
+	       $("#img").show();
+        }
+     });
+  });  
+  });
+</script>
+</body>
+</html>
+<!--
+Author
+@Rohit Kumar
+-->

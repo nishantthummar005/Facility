@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Codo Player example page</title>
+	</head>
+	<body>
+            <div class="my-player"></div>
+		<h2>Codo Player example</h2>
+		<p>Use as a reference for a new player setup</p>
+                <script src="../jquery-1.7.min.js" type="text/javascript"></script>
+		<script src="../CodoPlayer.js" type="text/javascript"></script>
+               <script>
+                            CodoPlayer([
+                                    {
+                                        src: ["../main/1.mp4"], // HTML5 video
+                                        title: "My video title 1",
+                                        poster:["../main/a.jpg"],
+                                        logo: ["../main/h.jpg"]
+                                    },
+                                    {
+                                        src: ["../main/3.mp4"], // HTML5 video
+                                        title: "My video title 2",
+                                        poster:["../main/b.jpg"]
+                                    },
+                                    {
+                                        src: ["../main/4.mp4"], // HTML5 video
+                                        title: "My video title 3",
+                                        poster:["../main/c.jpg"]
+                                    },
+                                    {
+                                        src: ["../main/5.mp4"], // HTML5 video
+                                        title: "My video title 3",
+                                        poster:["../main/c.jpg"]
+                                    }
+                                     // HTML5 or Flash audio, depending on browser capabilities
+                                ], {
+				width: 600, // Remove width & height keys for responsive behaviour
+				height: 338,
+				volume: 100,
+                                playlist:true,
+                                autoplay:false,
+				preload: false,
+                                plugins: {
+                                    share: true
+                                }
+				/* For more settings visit http://codoplayer.com/configuration/ */
+			});
+			$(document).ready(function (){
+                            $(".codo-player-playlist-ul li").each(function (){
+                               $(this).css("background","url(../main/c.jpg)"); 
+                               $(this).css("background-size","100% 100%");
+                            });
+                           
+                        });
+		</script>
+                
+		<p>If video does not play, copy Codo Player package into a local/remote server. It fully operates in server environment.</p>
+	</body>
+</html>
+

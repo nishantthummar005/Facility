@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Text and Image watermark using jquery demo</title>
+    </head>
+
+    <body>
+        <div style="width:95%; text-align:center">
+            <div style="float:left; width:48%">
+                <h3>Text Watermark demo</h3>
+                <img src="img/img3.jpg" style="width:100%" class="watermark_text"/>
+            </div>
+            <div style="float:right; width:48%;">
+                <h3>Image Watermark demo</h3>
+                <img src="img/iPhone%20X.jpg" style="width:50%" class="watermark_img"/>
+            </div>
+        </div>
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="js/jquery.watermark.min.js"></script>
+        <script>// path to the watermark image
+            $(function () {
+                //add text water mark;	
+                $('img.watermark_text').watermark({
+                    text: 'NOVA ONE CLICK SOLUTION',
+                    textWidth: 350,
+                    textColor: 'white',
+                    textSize:20,
+                    textBg:"red",
+                    gravity:"se",
+                    opacity:.5,
+                    margin:50
+                });
+                //add image water mark
+                $('img.watermark_img').watermark({
+                    path: 'img/img3.jpg',
+                    opacity:.5,
+                    outputWidth:700,
+                    outputHeight:500,
+                    margin:250,
+                });
+            })
+
+        </script>
+    </body>
+</html>
+
+
+

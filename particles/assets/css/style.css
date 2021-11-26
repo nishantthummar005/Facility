@@ -1,0 +1,24 @@
+canvas {
+    background: #161c2d;
+    width: 100vw;
+    height: 100vh;
+} 
+.action{
+    padding: 10px;
+    background: #dfdfdf;
+    display: flex;
+}
+.action input,select{
+    padding: 10px;
+    width: 330px;
+    font-size: 16px;
+    margin-left: 20px;
+}
+.action button{
+    border:1px solid #000;
+    background: #000;
+    margin-left: 20px;
+    padding: 5px 30px;
+    color: #fff;
+    font-size: 16px;
+}

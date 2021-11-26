@@ -1,0 +1,26 @@
+h1{
+    font-family: cursive;
+    text-align:center;
+    color: green;
+}
+.txt{
+    background: #dfdfdf;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+.keyboard{
+    padding: 10px;
+    background:#eee;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 20px;
+}
+.keyboard button{
+    background: black;
+    color: white;
+    border:none;
+    box-shadow: 0 0 5px white;
+    padding: 10px;
+}
