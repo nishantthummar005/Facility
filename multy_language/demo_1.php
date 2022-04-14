@@ -2,6 +2,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script type="text/javascript" src="language.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi">
+    </script>
     <link href="transliteration.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
 
