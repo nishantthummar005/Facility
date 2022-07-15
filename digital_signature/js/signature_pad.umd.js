@@ -1,13 +1,13 @@
 /*!
- * Signature Pad v3.0.0-beta.4 | https://github.com/szimek/signature_pad
- * (c) 2020 Szymon Nowak | Released under the MIT license
+ * Digital Signature Pad | https://nishantthummar.tech 
  */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.SignaturePad = factory());
-}(this, (function () { 'use strict';
+        typeof define === 'function' && define.amd ? define(factory) :
+            (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.SignaturePad = factory());
+}(this, (function () {
+    'use strict';
 
     var Point = (function () {
         function Point(x, y, time) {
@@ -187,9 +187,9 @@
                 : 5);
             this.dotSize =
                 options.dotSize ||
-                    function dotSize() {
-                        return (this.minWidth + this.maxWidth) / 2;
-                    };
+                function dotSize() {
+                    return (this.minWidth + this.maxWidth) / 2;
+                };
             this.penColor = options.penColor || 'black';
             this.backgroundColor = options.backgroundColor || 'rgba(0,0,0,0)';
             this.onBegin = options.onBegin;
